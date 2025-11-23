@@ -1,23 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3g3ui2j3sigp"]
+[gd_scene load_steps=8 format=3 uid="uid://d3g3ui2j3sigp"]
 
 [ext_resource type="Script" uid="uid://dra8ie8v44xe" path="res://player.gd" id="1_xhfnw"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhfnw"]
+albedo_color = Color(1, 0.09019608, 1, 1)
+
 [sub_resource type="QuadMesh" id="QuadMesh_0rwas"]
-size = Vector2(500, 500)
+material = SubResource("StandardMaterial3D_xhfnw")
+size = Vector2(50, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
-size = Vector2(500, 500)
+size = Vector2(50, 50)
 
 [sub_resource type="SphereMesh" id="SphereMesh_xhfnw"]
-radius = 250.0
-height = 500.0
+radius = 25.0
+height = 50.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpjcp"]
 albedo_color = Color(0.3019608, 1, 1, 1)
 
 [sub_resource type="PrismMesh" id="PrismMesh_kne1u"]
 material = SubResource("StandardMaterial3D_kpjcp")
-size = Vector3(500, -500, 1)
+size = Vector3(25, -25, 1)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xhfnw")
@@ -32,4 +36,5 @@ shape = SubResource("RectangleShape2D_0rwas")
 mesh = SubResource("SphereMesh_xhfnw")
 
 [node name="Triangle" type="MeshInstance2D" parent="."]
+position = Vector2(102, -15)
 mesh = SubResource("PrismMesh_kne1u")
