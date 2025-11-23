@@ -27,7 +27,12 @@ material = SubResource("StandardMaterial3D_kpjcp")
 size = Vector3(50, -50, 1)
 
 [node name="Player" type="RigidBody2D" node_paths=PackedStringArray("CCircle", "CTriangle", "CSquare")]
+<<<<<<< HEAD
 collision_layer = 3
+=======
+contact_monitor = true
+max_contacts_reported = 10
+>>>>>>> 27fa078550d0f0f28a558573b2941a991c32ea06
 script = ExtResource("1_xhfnw")
 CCircle = NodePath("CCircle")
 CTriangle = NodePath("CollisionPolygon2D")
