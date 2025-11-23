@@ -28,6 +28,7 @@ size = Vector2(56.5, 14)
 size = Vector2(20, 280)
 
 [node name="Level1" type="Node2D"]
+position = Vector2(750, 316)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -66,4 +67,4 @@ position = Vector2(714, -2)
 shape = SubResource("RectangleShape2D_5g1s2")
 
 [node name="Player" parent="." instance=ExtResource("2_cove1")]
-position = Vector2(-675, 94)
+position = Vector2(-680, 63)
