@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxstjv46yi584"]
+
+[ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="1_8uh7m"]
+[ext_resource type="PackedScene" uid="uid://bs1m7tu6y31jk" path="res://enemy_square.tscn" id="2_6uqi0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ppyta"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_8uh7m"]
+size = Vector2(500, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(490, 334)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_ppyta")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+position = Vector2(2, 0)
+mesh = SubResource("QuadMesh_8uh7m")
+
+[node name="Player" parent="." instance=ExtResource("1_8uh7m")]
+position = Vector2(320, 281)
+
+[node name="Enemy" parent="." instance=ExtResource("2_6uqi0")]
+position = Vector2(618, 120)
+
+[connection signal="ready" from="Enemy" to="Player" method="_on_enemy_ready"]
