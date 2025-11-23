@@ -4,8 +4,14 @@ extends RigidBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var shapes: Array[MeshInstance2D]
+@export var CCircle: CollisionShape2D
+@export var CTriangle: CollisionPolygon2D
+@export var CSquare: CollisionShape2D 
+
 var on_floor: bool = false
 var state: String = "Square"
+
+
 
 var forces: Vector2 = Vector2(0,0)
 var gravity: = Vector2(0,0)
@@ -50,17 +56,26 @@ func _input(event):
 	if event.is_action_pressed("square"):
 		hide_but_one("Square")
 		state = "S"
-		print("square")
+		CCircle.disabled = true
+		CTriangle.disabled = true
+		CSquare.disabled = false
+		
 		pass
 	if event.is_action_pressed("triangle"):
 		hide_but_one("Triangle")
 		state = "T"
-		print("triangle")
+
+		CCircle.disabled = true
+		CTriangle.disabled = false
+		CSquare.disabled = true
+
 		pass
 	if event.is_action_pressed("circle"):
 		hide_but_one("Circle")
 		state = "C"
-		print("circle")
+		CCircle.disabled = false
+		CTriangle.disabled = true
+		CSquare.disabled = true
 		pass
 		
 	if Input.is_action_just_pressed("right"):
@@ -74,6 +89,7 @@ func _input(event):
 func hide_but_one(nameToShow: String, shape_list: Array[MeshInstance2D] = shapes ) -> void:
 	for x in shape_list:
 		x.hide()
+		
 		if x.name == nameToShow:
 			x.show()
 			print("Showing: ", x.name)
