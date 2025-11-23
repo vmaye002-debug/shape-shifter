@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://crgtwstjtppa3" path="res://Level 2.png" id="1_psxy2"]
 [ext_resource type="Texture2D" uid="uid://dtwiiq0nc46rs" path="res://Level 2(fixed).png" id="2_wwdpc"]
 [ext_resource type="PackedScene" path="res://finish_flag.tscn" id="3_6faey"]
-[ext_resource type="PackedScene" uid="uid://caqc58wa2s471" path="res://Level1.tscn" id="4_nc7oo"]
+[ext_resource type="PackedScene" uid="uid://hkmqg5nkkng1" path="res://Level1.tscn" id="4_nc7oo"]
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="5_6x3wt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3453u"]
@@ -24,7 +24,7 @@ size = Vector2(67, 53)
 [node name="Level2" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(1500.5, 405)
+position = Vector2(1501, 402)
 
 [node name="Level2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(-750.5, -194)
