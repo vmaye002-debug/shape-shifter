@@ -15,6 +15,8 @@ var last_state: String = "C"
 
 
 var forces: Vector2 = Vector2(0,0)
+var jump_force: Vector2 = Vector2(0,0)
+var rot_force: Vector2 = Vector2(0,0)
 var gravity: = Vector2(0,0)
 
 func _ready() -> void:
@@ -24,6 +26,24 @@ func _ready() -> void:
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	
+	
+	if Input.is_action_pressed("right"):
+		#print("pressing right")
+		if state_now != "S":
+			forces  += Vector2(50,0)
+	if Input.is_action_pressed("left"):
+		
+		if state_now != "S":
+			#print("pressing left")
+			forces  += Vector2(-50,0)
+		if state_now == "T":
+			rot_force +=Vector2(-50,0)
+	if Input.is_action_just_pressed("space"):
+		if state_now != "S" and on_floor:
+			print("yupp")
+			jump_force += Vector2(0,-40000)
+	
 	var i = 0
 	if state.get_contact_count()> 0:
 		while i < state.get_contact_count():
@@ -34,28 +54,22 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			i += 1
 	else:
 		on_floor=false
-	apply_central_impulse(forces) 
+	#forces = forces - Vector2(-forces/100)
 	
-	if state_now != last_state:
-		if on_floor:
-			apply_central_impulse(Vector2.UP*200)
-		last_state = state_now
+	forces.x = clampf(forces.x,-20,20)
+	apply_central_force(forces*100) 
+	apply_central_force(jump_force)
 	
+	linear_velocity.limit_length(400)
+	print(linear_velocity)
 	
-	
-
-
-func _physics_process(delta: float) -> void:
-	if not on_floor:
-		gravity += get_gravity() * delta
-	else:
-		gravity = Vector2.ZERO
-	
-	
-	
-func _process(delta: float) -> void:
-	pass
-
+	jump_force = Vector2.ZERO
+	forces = Vector2.ZERO
+	#
+	#if state_now != last_state:
+		#if on_floor:
+			#apply_central_impulse(Vector2.UP*200)
+		#last_state = state_now
 
 
 func _input(event):
@@ -89,18 +103,6 @@ func _input(event):
 		CSquare.disabled = true
 		pass
 		
-	if Input.is_action_pressed("right"):
-		print("pressing right")
-		if state_now != "S":
-			forces  += Vector2(50,0)
-	if Input.is_action_pressed("left"):
-		print("pressing left")
-		if state_now != "S":
-			forces  += Vector2(-50,0)
-	if Input.is_action_pressed("space"):
-		print("pressing left")
-		if state_now != "S":
-			forces += Vector2(0,500)
 	
 
 func hide_but_one(nameToShow: String, shape_list: Array[MeshInstance2D] = shapes ) -> void:
