@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
+const SHAPES = {"square","circle","triangle"}
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 
 
 
-func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
-	pass
+func _input(event):
+	if event.is_action_pressed("space"):
+		pass
 	
