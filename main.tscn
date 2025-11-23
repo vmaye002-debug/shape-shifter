@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://3fytn1wf2xio"]
+[gd_scene load_steps=5 format=3 uid="uid://3fytn1wf2xio"]
 
-[ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" path="res://Player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bs1m7tu6y31jk" path="res://enemy_square.tscn" id="2_0xm2m"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7dm0k"]
 size = Vector2(2000, 20)
@@ -21,3 +22,6 @@ mesh = SubResource("QuadMesh_7dm0k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(708, 490)
 shape = SubResource("WorldBoundaryShape2D_ig7tw")
+
+[node name="Enemy" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(399, 281)
