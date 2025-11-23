@@ -32,6 +32,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	apply_central_impulse(forces) 
 	
 	
+	
+	
 
 
 func _physics_process(delta: float) -> void:
