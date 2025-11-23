@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3g3ui2j3sigp"]
+[gd_scene load_steps=8 format=3 uid="uid://c83en1b44l4ly"]
 
 [ext_resource type="Script" uid="uid://dra8ie8v44xe" path="res://player.gd" id="1_xhfnw"]
 
@@ -24,6 +24,7 @@ material = SubResource("StandardMaterial3D_kpjcp")
 size = Vector3(25, -25, 1)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_xhfnw")
 
 [node name="Square" type="MeshInstance2D" parent="."]
@@ -38,3 +39,5 @@ mesh = SubResource("SphereMesh_xhfnw")
 [node name="Triangle" type="MeshInstance2D" parent="."]
 position = Vector2(102, -15)
 mesh = SubResource("PrismMesh_kne1u")
+
+[connection signal="ready" from="." to="." method="_on_ready"]

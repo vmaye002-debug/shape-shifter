@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://3fytn1wf2xio"]
 
-[ext_resource type="PackedScene" path="res://Player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c83en1b44l4ly" path="res://Player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bs1m7tu6y31jk" path="res://enemy_square.tscn" id="2_0xm2m"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7dm0k"]
@@ -25,3 +25,4 @@ shape = SubResource("WorldBoundaryShape2D_ig7tw")
 
 [node name="Enemy" parent="." instance=ExtResource("2_0xm2m")]
 position = Vector2(399, 281)
+motion_mode = 1
