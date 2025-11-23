@@ -30,7 +30,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			#print(state.get_contact_collider_object(i))
 			var normal := state.get_contact_local_normal(i)
 			on_floor = normal.dot(Vector2.UP) > 0.99 # this can be dialed in
-			print("Floor: ", on_floor)
+			#print("Floor: ", on_floor)
 			i += 1
 	else:
 		on_floor=false
