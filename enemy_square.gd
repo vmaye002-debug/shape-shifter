@@ -7,13 +7,13 @@ var returning:bool = false
 func _physics_process(delta: float) -> void:
 	if move_and_collide(velocity * delta):
 		returning = true
-	#if returning:
-		#if position.y > 300:
-			#velocity.y = -400
+	if returning:
+		if position.y > 300:
+			velocity.y = -40
 		#else:
-			#velocity.y = 0
-			#position.y = 300
-			#returning = false
+			velocity.y = 0
+			position.y = 30
+			returning = false
 		print(position)
 	
 	move_and_slide()
@@ -21,10 +21,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	dropping = true;
-	#velocity.y = 500;
+	velocity.y = 50;
 	print(body)
-	pass # Replace with function body.
-
-
-func _on_ready() -> void:
 	pass # Replace with function body.
