@@ -9,7 +9,8 @@ var shapes: Array[MeshInstance2D]
 @export var CSquare: CollisionShape2D 
 
 var on_floor: bool = false
-var state: String = "Square"
+var state_now: String = "S"
+var last_state: String = "S"
 
 
 
@@ -27,10 +28,14 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	while i < state.get_contact_count():
 		var normal := state.get_contact_local_normal(i)
 		on_floor = normal.dot(Vector2.UP) > 0.99 # this can be dialed in
+		print("Floor: ", on_floor)
 		i += 1
-	apply_central_force(gravity)
+	#apply_central_force(gravity)
 	apply_central_impulse(forces) 
 	
+	if state_now != last_state:
+		apply_central_impulse(Vector2.UP*1000)
+		last_state = state_now
 	
 	
 	
@@ -57,7 +62,7 @@ func _input(event):
 		
 	if event.is_action_pressed("square"):
 		hide_but_one("Square")
-		state = "S"
+		state_now = "S"
 		CCircle.disabled = true
 		CTriangle.disabled = true
 		CSquare.disabled = false
@@ -65,7 +70,7 @@ func _input(event):
 		pass
 	if event.is_action_pressed("triangle"):
 		hide_but_one("Triangle")
-		state = "T"
+		state_now = "T"
 
 		CCircle.disabled = true
 		CTriangle.disabled = false
@@ -74,7 +79,7 @@ func _input(event):
 		pass
 	if event.is_action_pressed("circle"):
 		hide_but_one("Circle")
-		state = "C"
+		state_now = "C"
 		CCircle.disabled = false
 		CTriangle.disabled = true
 		CSquare.disabled = true
