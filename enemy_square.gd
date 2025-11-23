@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @export var areaDetect:Area2D
+@export var dropSpeed:float = 800
 var startingY:float
 var returning:bool = false
 
@@ -14,7 +15,7 @@ func _physics_process(delta: float) -> void:
 			
 	if returning:
 		if position.y > startingY:
-			velocity.y = -400
+			velocity.y = -dropSpeed*.80
 		else:
 			velocity.y = 0
 			position.y = startingY
@@ -26,7 +27,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body)
-	velocity.y = 600;
+	velocity.y = dropSpeed;
 	pass # Replace with function body.
 
 

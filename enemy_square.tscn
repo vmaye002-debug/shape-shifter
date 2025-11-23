@@ -9,7 +9,7 @@ size = Vector2(70, 70)
 size = Vector2(70, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
-size = Vector2(70, 210)
+size = Vector2(70, 400)
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("areaDetect")]
 script = ExtResource("1_tc28u")
@@ -25,7 +25,7 @@ shape = SubResource("RectangleShape2D_qi2p4")
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 70)
+position = Vector2(0, 165)
 shape = SubResource("RectangleShape2D_iifgy")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
