@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://caqc58wa2s471"]
+[gd_scene load_steps=13 format=3 uid="uid://hkmqg5nkkng1"]
 
 [ext_resource type="Texture2D" uid="uid://bqiefpxw12mk0" path="res://Level 1.png" id="1_mc20k"]
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="2_cove1"]
+[ext_resource type="PackedScene" uid="uid://bth6weqqvlgei" path="res://finish_flag.tscn" id="3_dwyiq"]
+[ext_resource type="PackedScene" uid="uid://3fytn1wf2xio" path="res://main.tscn" id="4_dn5ey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwyiq"]
 size = Vector2(653, 115)
@@ -67,3 +69,7 @@ shape = SubResource("RectangleShape2D_5g1s2")
 
 [node name="Player" parent="." instance=ExtResource("2_cove1")]
 position = Vector2(-675, 94)
+
+[node name="FinishFlag" parent="." instance=ExtResource("3_dwyiq")]
+position = Vector2(599, 43)
+next_level = ExtResource("4_dn5ey")

@@ -9,12 +9,14 @@ var shapes: Array[MeshInstance2D]
 @export var CSquare: CollisionShape2D 
 
 var on_floor: bool = false
-var state_now: String = "S"
-var last_state: String = "S"
+var state_now: String = "C"
+var last_state: String = "C"
 
 
 
 var forces: Vector2 = Vector2(0,0)
+var jump_force: Vector2 = Vector2(0,0)
+var rot_force: Vector2 = Vector2(0,0)
 var gravity: = Vector2(0,0)
 
 func _ready() -> void:
@@ -24,38 +26,62 @@ func _ready() -> void:
 
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	
+	
+	if Input.is_action_pressed("right"):
+		#print("pressing right")
+		if state_now != "S":
+			forces  += Vector2(50,0)
+	if Input.is_action_pressed("left"):
+		
+		if state_now != "S":
+			#print("pressing left")
+			forces  += Vector2(-50,0)
+		if state_now == "T":
+			rot_force +=Vector2(-50,0)
+	if Input.is_action_just_pressed("space"):
+		if state_now != "S" and on_floor:
+			print("yupp")
+			jump_force += Vector2(0,-40000)
+	
 	var i = 0
 	if state.get_contact_count()> 0:
 		while i < state.get_contact_count():
-			print(state.get_contact_collider_object(i))
+			#print(state.get_contact_collider_object(i))
 			var normal := state.get_contact_local_normal(i)
 			on_floor = normal.dot(Vector2.UP) > 0.99 # this can be dialed in
-			print("Floor: ", on_floor)
+			#print("Floor: ", on_floor)
 			i += 1
 	else:
 		on_floor=false
-	apply_central_impulse(forces) 
+	#forces = forces - Vector2(-forces/100)
 	
-	if state_now != last_state:
-		if on_floor:
-			apply_central_impulse(Vector2.UP*200)
-		last_state = state_now
+	forces.x = clampf(forces.x,-20,20)
+	apply_central_force(forces*100) 
+	apply_central_force(jump_force)
 	
-	
+	var horizontal_velocity = Vector2(linear_velocity.x,0.0)
 	
 
+	var horizontal_speed = horizontal_velocity.length()
+	
 
-func _physics_process(delta: float) -> void:
-	if not on_floor:
-		gravity += get_gravity() * delta
-	else:
-		gravity = Vector2.ZERO
+	if horizontal_speed > 300:
+		# Normalize the horizontal vector (length becomes 1)
+		# Then, scale it by the maximum allowed speed
+		horizontal_velocity = horizontal_velocity.normalized() * 300
+		
+		# 5. Recombine the clamped horizontal component with the original vertical (Y) component
+		state.linear_velocity = Vector2(horizontal_velocity.x, linear_velocity.y)
+	#print(linear_velocity)
 	
-	
-	
-func _process(delta: float) -> void:
-	pass
-
+	jump_force = Vector2.ZERO
+	forces = Vector2.ZERO
+	#
+	#if state_now != last_state:
+		#if on_floor:
+			#apply_central_impulse(Vector2.UP*200)
+		#last_state = state_now
 
 
 func _input(event):
@@ -89,12 +115,6 @@ func _input(event):
 		CSquare.disabled = true
 		pass
 		
-	if Input.is_action_just_pressed("right"):
-		print("pressing right")
-		forces  += Vector2(50,0)
-	if Input.is_action_just_pressed("left"):
-		print("pressing left")
-		forces  += Vector2(-50,0)
 	
 
 func hide_but_one(nameToShow: String, shape_list: Array[MeshInstance2D] = shapes ) -> void:

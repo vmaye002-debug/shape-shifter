@@ -36,6 +36,7 @@ CTriangle = NodePath("CollisionPolygon2D")
 CSquare = NodePath("CSquare")
 
 [node name="Square" type="MeshInstance2D" parent="."]
+visible = false
 mesh = SubResource("QuadMesh_0rwas")
 
 [node name="CSquare" type="CollisionShape2D" parent="."]
@@ -48,13 +49,14 @@ mesh = SubResource("SphereMesh_xhfnw")
 
 [node name="CCircle" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xhfnw")
-disabled = true
 
 [node name="Triangle" type="MeshInstance2D" parent="."]
 visible = false
 mesh = SubResource("PrismMesh_kne1u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PackedVector2Array(0, -25, 25, 25, -25, 25)
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
