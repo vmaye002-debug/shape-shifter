@@ -9,8 +9,8 @@ var shapes: Array[MeshInstance2D]
 @export var CSquare: CollisionShape2D 
 
 var on_floor: bool = false
-var state_now: String = "S"
-var last_state: String = "S"
+var state_now: String = "C"
+var last_state: String = "C"
 
 
 
@@ -27,7 +27,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var i = 0
 	if state.get_contact_count()> 0:
 		while i < state.get_contact_count():
-			print(state.get_contact_collider_object(i))
+			#print(state.get_contact_collider_object(i))
 			var normal := state.get_contact_local_normal(i)
 			on_floor = normal.dot(Vector2.UP) > 0.99 # this can be dialed in
 			print("Floor: ", on_floor)
@@ -89,12 +89,18 @@ func _input(event):
 		CSquare.disabled = true
 		pass
 		
-	if Input.is_action_just_pressed("right"):
+	if Input.is_action_pressed("right"):
 		print("pressing right")
-		forces  += Vector2(50,0)
-	if Input.is_action_just_pressed("left"):
+		if state_now != "S":
+			forces  += Vector2(50,0)
+	if Input.is_action_pressed("left"):
 		print("pressing left")
-		forces  += Vector2(-50,0)
+		if state_now != "S":
+			forces  += Vector2(-50,0)
+	if Input.is_action_pressed("space"):
+		print("pressing left")
+		if state_now != "S":
+			forces += Vector2(0,500)
 	
 
 func hide_but_one(nameToShow: String, shape_list: Array[MeshInstance2D] = shapes ) -> void:
