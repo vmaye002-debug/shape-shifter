@@ -60,8 +60,20 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	apply_central_force(forces*100) 
 	apply_central_force(jump_force)
 	
-	linear_velocity.limit_length(400)
-	print(linear_velocity)
+	var horizontal_velocity = Vector2(linear_velocity.x,0.0)
+	
+
+	var horizontal_speed = horizontal_velocity.length()
+	
+
+	if horizontal_speed > 300:
+		# Normalize the horizontal vector (length becomes 1)
+		# Then, scale it by the maximum allowed speed
+		horizontal_velocity = horizontal_velocity.normalized() * 300
+		
+		# 5. Recombine the clamped horizontal component with the original vertical (Y) component
+		state.linear_velocity = Vector2(horizontal_velocity.x, linear_velocity.y)
+	#print(linear_velocity)
 	
 	jump_force = Vector2.ZERO
 	forces = Vector2.ZERO
