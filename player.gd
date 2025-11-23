@@ -34,7 +34,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	apply_central_impulse(forces) 
 	
 	if state_now != last_state:
-		apply_central_impulse(Vector2.UP*100)
+		apply_central_impulse(Vector2.UP*1000)
 		last_state = state_now
 	
 	
