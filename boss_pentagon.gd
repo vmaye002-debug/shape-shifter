@@ -56,9 +56,9 @@ func _on_collision(_body) -> void:
 			apply_impulse(dir * 800)
 
 func _roll_towards_player() -> void:
-	var player = get_tree().get_first_node_in_group("Player")
-	if player:
-		var dir = (player.global_position - global_position).normalized()
+	var players = get_tree().get_first_node_in_group("Player")
+	if players:
+		var dir = (players.global_position - global_position).normalized()
 		# Push towards player + Add spin (Torque)
 		apply_impulse(Vector2(dir.x * 1000, -200)) 
 		apply_torque_impulse(20000 * sign(dir.x))
