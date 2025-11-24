@@ -27,7 +27,7 @@ albedo_color = Color(0.3019608, 1, 1, 1)
 material = SubResource("StandardMaterial3D_kpjcp")
 size = Vector3(50, -50, 1)
 
-[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("CCircle", "CTriangle", "CSquare")]
+[node name="Player" type="RigidBody2D" node_paths=PackedStringArray("CCircle", "CTriangle", "CSquare") groups=["Player"]]
 collision_layer = 3
 can_sleep = false
 contact_monitor = true
