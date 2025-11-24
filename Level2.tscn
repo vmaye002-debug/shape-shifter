@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://di4bicnfbayui"]
+[gd_scene load_steps=14 format=3 uid="uid://di4bicnfbayui"]
 
 [ext_resource type="Texture2D" uid="uid://crgtwstjtppa3" path="res://Level 2.png" id="1_psxy2"]
 [ext_resource type="Texture2D" uid="uid://dtwiiq0nc46rs" path="res://Level 2(fixed).png" id="2_wwdpc"]
 [ext_resource type="PackedScene" uid="uid://bth6weqqvlgei" path="res://finish_flag.tscn" id="3_6faey"]
 [ext_resource type="PackedScene" uid="uid://cwut1arkaendl" path="res://enemy_triangle.tscn" id="4_6faey"]
+[ext_resource type="PackedScene" uid="uid://d08jg36au575w" path="res://Menu.tscn" id="4_nc7oo"]
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="5_6x3wt"]
 [ext_resource type="PackedScene" uid="uid://bs1m7tu6y31jk" path="res://enemy_square.tscn" id="5_nc7oo"]
 [ext_resource type="PackedScene" uid="uid://dsqqh8fvkltgb" path="res://Circle Enemy/Spawner.tscn" id="7_6x3wt"]
@@ -38,6 +39,7 @@ texture = ExtResource("2_wwdpc")
 
 [node name="FinishFlag" parent="StaticBody2D" instance=ExtResource("3_6faey")]
 position = Vector2(1417.5, -204)
+next_level = ExtResource("4_nc7oo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_3453u")
