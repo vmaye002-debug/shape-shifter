@@ -1,14 +1,14 @@
 [gd_scene load_steps=18 format=3 uid="uid://crngtnpxtq2w2"]
 
 [ext_resource type="Texture2D" uid="uid://bfr1eqm5jmeyi" path="res://IMG_1307.PNG" id="1_0twmt"]
-[ext_resource type="Script" uid="uid://begbt55gom54g" path="res://boss_level.gd" id="1_3cqon"]
+[ext_resource type="Script" path="res://boss_level.gd" id="1_3cqon"]
 [ext_resource type="Texture2D" uid="uid://m17guwhnxrxw" path="res://IMG_1306.PNG" id="2_prt80"]
 [ext_resource type="Texture2D" uid="uid://cmcv4sko4s8s1" path="res://IMG_1305.PNG" id="3_p84dd"]
 [ext_resource type="PackedScene" uid="uid://u68ncujljw17" path="res://boss_pentagon.tscn" id="4_7b2gy"]
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="5_hu5q4"]
 [ext_resource type="PackedScene" uid="uid://btfkwalfpjbyr" path="res://warning.tscn" id="6_prt80"]
 [ext_resource type="Texture2D" uid="uid://tnm6rbmarybj" path="res://Circle Enemy/Princess Heart.png" id="7_hu5q4"]
-[ext_resource type="Script" uid="uid://f3h1i70orpue" path="res://princess_heart.gd" id="8_3cqon"]
+[ext_resource type="Script" path="res://princess_heart.gd" id="8_3cqon"]
 [ext_resource type="Texture2D" uid="uid://pnna6o4evf2q" path="res://Circle Enemy/Cage.png" id="9_mrcxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cqon"]
@@ -103,27 +103,27 @@ offset_bottom = 330.0
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Img1308" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-135, 532)
+position = Vector2(127, 534)
 texture = ExtResource("1_0twmt")
 
 [node name="Img1309" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-131, 93)
+position = Vector2(131, 95)
 texture = ExtResource("2_prt80")
 
 [node name="Img1310" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-132, 386)
+position = Vector2(130, 388)
 texture = ExtResource("3_p84dd")
 
-[node name="Img1308" type="Sprite2D" parent="StaticBody2D/Img1310"]
-position = Vector2(1577, 145)
+[node name="Img1311" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1445, 531)
 texture = ExtResource("1_0twmt")
 
-[node name="Img1309" type="Sprite2D" parent="StaticBody2D/Img1310"]
-position = Vector2(1581, -294)
+[node name="Img1312" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1449, 92)
 texture = ExtResource("2_prt80")
 
-[node name="Img1310" type="Sprite2D" parent="StaticBody2D/Img1310"]
-position = Vector2(1580, -1)
+[node name="Img1313" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1448, 385)
 texture = ExtResource("3_p84dd")
 
 [node name="Img1307" type="Sprite2D" parent="StaticBody2D"]
