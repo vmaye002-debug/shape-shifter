@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://btfkwalfpjbyr"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_4frs0"]
+size = Vector2(50, 50)
+center_offset = Vector3(0, -25, 0)
+
+[sub_resource type="Gradient" id="Gradient_wdnif"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jupec"]
+gradient = SubResource("Gradient_wdnif")
+
+[node name="WARNING" type="MeshInstance2D"]
+mesh = SubResource("QuadMesh_4frs0")
+texture = SubResource("GradientTexture1D_jupec")
