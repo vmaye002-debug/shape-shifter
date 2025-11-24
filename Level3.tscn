@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://cd5ostc3uvy2b"]
+
+[ext_resource type="Texture2D" uid="uid://dxnro1mjefj3w" path="res://Level 3 higher.png" id="1_h8oof"]
+[ext_resource type="Texture2D" uid="uid://d027l4x60o7tu" path="res://Level 3.png" id="2_nqeel"]
+[ext_resource type="Texture2D" uid="uid://cggbkx02r8iy" path="res://Level 3 lower.png" id="3_u5lf4"]
+[ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="4_7swbh"]
+[ext_resource type="Texture2D" uid="uid://bjnkgr0oxholf" path="res://Flag 2.png" id="5_ewulq"]
+[ext_resource type="PackedScene" uid="uid://bs1m7tu6y31jk" path="res://enemy_square.tscn" id="6_6vscs"]
+[ext_resource type="PackedScene" uid="uid://cwut1arkaendl" path="res://enemy_triangle.tscn" id="7_otr1s"]
+[ext_resource type="PackedScene" uid="uid://dsqqh8fvkltgb" path="res://Circle Enemy/Spawner.tscn" id="8_nqeel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bptnd"]
+size = Vector2(1503, 309)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp5y5"]
+size = Vector2(180, 231)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kah4x"]
+size = Vector2(99.5, 70.25)
+
+[node name="Level3" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Level3Higher2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-401, 121)
+texture = ExtResource("1_h8oof")
+
+[node name="Level4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-403, 392)
+texture = ExtResource("2_nqeel")
+
+[node name="Level3Lower2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-402, 585)
+texture = ExtResource("3_u5lf4")
+
+[node name="Level3Higher" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(754, 120)
+texture = ExtResource("1_h8oof")
+
+[node name="Level3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(752, 391)
+texture = ExtResource("2_nqeel")
+
+[node name="Level3Lower" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(753, 584)
+texture = ExtResource("3_u5lf4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(752.5, 682.5)
+shape = SubResource("RectangleShape2D_bptnd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1369, 418.5)
+shape = SubResource("RectangleShape2D_gp5y5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1229.25, 338.875)
+shape = SubResource("RectangleShape2D_kah4x")
+
+[node name="Player" parent="." instance=ExtResource("4_7swbh")]
+position = Vector2(47, 476)
+
+[node name="Flag2" type="Sprite2D" parent="."]
+position = Vector2(646, 164)
+texture = ExtResource("5_ewulq")
+
+[node name="Enemy" parent="." instance=ExtResource("6_6vscs")]
+position = Vector2(338, 164)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_6vscs")]
+position = Vector2(586, 164)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_6vscs")]
+position = Vector2(800, 164)
+
+[node name="Enemy4" parent="." instance=ExtResource("6_6vscs")]
+position = Vector2(1035, 164)
+
+[node name="Node2D" parent="." instance=ExtResource("7_otr1s")]
+position = Vector2(333, 435)
+
+[node name="Node2D2" parent="." instance=ExtResource("7_otr1s")]
+position = Vector2(586, 435)
+
+[node name="Node2D3" parent="." instance=ExtResource("7_otr1s")]
+position = Vector2(810, 435)
+
+[node name="Node2D4" parent="." instance=ExtResource("7_otr1s")]
+position = Vector2(1031, 435)
+
+[node name="Circle Spawner" parent="." instance=ExtResource("8_nqeel")]
+position = Vector2(1233, 452)
