@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://xy7h8fu1uemh"]
+[gd_scene load_steps=5 format=3 uid="uid://xy7h8fu1uemh"]
 
 [ext_resource type="Script" uid="uid://bg7so2a6glrgt" path="res://loldie.gd" id="1_7wwpi"]
 [ext_resource type="FontFile" uid="uid://ch3rytoxdycqw" path="res://Oups_Clean.otf" id="2_djmu0"]
+[ext_resource type="Texture2D" uid="uid://bktcugxpnoxoc" path="res://Deathscreen.png" id="3_gj3my"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0x26r"]
+texture = ExtResource("3_gj3my")
 
 [node name="loldied" type="Control" node_paths=PackedStringArray("restart_button")]
 layout_mode = 3
@@ -41,6 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_0x26r")
 
 [node name="Button" type="Button" parent="CanvasLayer"]
 anchors_preset = 8
