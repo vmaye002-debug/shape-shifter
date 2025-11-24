@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://u68ncujljw17"]
 
 [ext_resource type="Script" uid="uid://2t2cthiu7owv" path="res://boss_pentagon.gd" id="1_gfht3"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_hvvpq"]
-size = Vector2(30, 30)
+[ext_resource type="Texture2D" uid="uid://cqprmxlhutohs" path="res://Circle Enemy/Count Pentagon.png" id="2_p7w31"]
 
 [node name="cant COUNT this boss" type="RigidBody2D"]
 script = ExtResource("1_gfht3")
@@ -11,10 +9,12 @@ script = ExtResource("1_gfht3")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, -25, -23.78, -7.73, -14.69, 20.23, 14.69, 20.23, 23.78, -7.73)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="CollisionPolygon2D"]
-mesh = SubResource("QuadMesh_hvvpq")
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(0, -30, -28.53, -9.27, -17.63, 24.27, 17.63, 24.27, 17.63, 24.27, 28.53, -9.27)
+
+[node name="CountPentagon" type="Sprite2D" parent="."]
+position = Vector2(55, -2)
+scale = Vector2(0.09952301, 0.09952301)
+texture = ExtResource("2_p7w31")

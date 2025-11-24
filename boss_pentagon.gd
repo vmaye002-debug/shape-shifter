@@ -13,7 +13,9 @@ var tri_scene = preload("res://enemy_triangle.tscn")
 var sq_scene = preload("res://enemy_square.tscn")
 var circle_scene = preload("res://Circle Enemy/circle_enemy.tscn")
 
-# NEW: Track invulnerability state
+signal died
+
+
 var is_invulnerable: bool = false
 
 func _ready() -> void:
@@ -31,44 +33,41 @@ func _ready() -> void:
 
 func _on_collision(body: Node) -> void:
 	if body.is_in_group("Player"):
-		# If we are currently invulnerable, ignore the hit
+
 		if is_invulnerable:
 			return
 
-		# REMOVED: The height check (global_position.y < global_position.y - 10)
-		# ADDED: Damage logic for any collision form
+
 		health -= 1
-		
-		# ADDED: Fling the boss away from the player
+
 		var direction_away = (global_position - body.global_position).normalized()
-		# Apply a strong impulse in that direction. 
-		# We add a slight upward force (-0.2 Y) to ensure it arcs through the air 
-		# rather than sliding on the ground.
+
 		apply_impulse((direction_away + Vector2(0, -0.2)).normalized() * 1500)
 		
 		if health <= 0:
+			emit_signal("died")
 			queue_free()
 		else:
-			# ADDED: Start Invulnerability Timer
+
 			_start_invulnerability()
 			
-		return # Stop processing the rest of the function (movement logic)
+		return 
 
-	# Normal movement logic for when hitting walls/floor
+
 	if randf() < 0.25:
 		_roll_towards_player()
 	else:
 		var dir = Vector2(randf_range(-1, 1), -0.5).normalized()
 		apply_impulse(dir * jump_force)
 
-# NEW: Handle invulnerability cooldown and visuals
+
 func _start_invulnerability() -> void:
 	is_invulnerable = true
-	modulate.a = 0.5 # Visual feedback: Make boss semi-transparent
+	modulate.a = 0.5 
 	
 	await get_tree().create_timer(1.0).timeout
 	
-	modulate.a = 1.0 # Reset transparency
+	modulate.a = 1.0 
 	is_invulnerable = false
 
 func _roll_towards_player() -> void:
