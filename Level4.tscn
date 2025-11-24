@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bjnkgr0oxholf" path="res://Flag 2.png" id="4_1ug64"]
 [ext_resource type="PackedScene" uid="uid://dsqqh8fvkltgb" path="res://Circle Enemy/Spawner.tscn" id="5_yg50l"]
 [ext_resource type="PackedScene" uid="uid://bth6weqqvlgei" path="res://finish_flag.tscn" id="6_cbmc8"]
-[ext_resource type="PackedScene" uid="uid://crngtnpxtq2w2" path="res://BossLevel.tscn" id="7_872hp"]
+[ext_resource type="PackedScene" uid="uid://g3vusthp4ctf" path="res://Level5.tscn" id="7_yqqjl"]
 [ext_resource type="PackedScene" uid="uid://bs1m7tu6y31jk" path="res://enemy_square.tscn" id="8_apgry"]
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="9_m0rsl"]
 
@@ -100,7 +100,7 @@ shape = SubResource("RectangleShape2D_rnkmw")
 
 [node name="FinishFlag" parent="StaticBody2D" instance=ExtResource("6_cbmc8")]
 position = Vector2(2138, 352)
-next_level = ExtResource("7_872hp")
+next_level = ExtResource("7_yqqjl")
 
 [node name="Enemy" parent="StaticBody2D" instance=ExtResource("8_apgry")]
 position = Vector2(1741, 83)

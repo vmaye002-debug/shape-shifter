@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bs1m7tu6y31jk"]
+[gd_scene load_steps=7 format=3 uid="uid://bs1m7tu6y31jk"]
 
 [ext_resource type="Script" uid="uid://b1ofnewh4jl61" path="res://enemy_square.gd" id="1_tc28u"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_4gyqm"]
 size = Vector2(70, 70)
+
+[sub_resource type="Gradient" id="Gradient_xxftg"]
+colors = PackedColorArray(0, 0, 0, 1, 1.2648509, 0.27353495, 0.40546402, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tc28u"]
+gradient = SubResource("Gradient_xxftg")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qi2p4"]
 size = Vector2(70, 70)
@@ -17,6 +23,7 @@ areaDetect = NodePath("Area2D")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 mesh = SubResource("QuadMesh_4gyqm")
+texture = SubResource("GradientTexture2D_tc28u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qi2p4")

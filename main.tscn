@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://3fytn1wf2xio"]
+[gd_scene load_steps=18 format=3 uid="uid://3fytn1wf2xio"]
 
 [ext_resource type="Texture2D" uid="uid://bqiefpxw12mk0" path="res://Level 1.png" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="1_ig7tw"]
@@ -31,9 +31,32 @@ size = Vector2(81, 63)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4c57u"]
 size = Vector2(201, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efxa6"]
+size = Vector2(243, 726)
+
 [node name="Main" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Level1Higher3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1978, 150)
+texture = ExtResource("1_kek77")
+
+[node name="Level1Lower3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1978, 519)
+texture = ExtResource("2_4c57u")
+
+[node name="Level1Higher2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-45, 158)
+texture = ExtResource("1_kek77")
+
+[node name="Level1Lower2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-45, 527)
+texture = ExtResource("2_4c57u")
+
+[node name="Level3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-46, 374)
+texture = ExtResource("1_h2yge")
 
 [node name="Level1Higher" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(497, 150)
@@ -44,7 +67,7 @@ position = Vector2(497, 519)
 texture = ExtResource("2_4c57u")
 
 [node name="Level1" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(496, 375)
+position = Vector2(496, 374)
 texture = ExtResource("1_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -74,6 +97,14 @@ shape = SubResource("RectangleShape2D_kek77")
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(786.5, 354)
 shape = SubResource("RectangleShape2D_4c57u")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1367, 263)
+shape = SubResource("RectangleShape2D_efxa6")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-366.5, 264)
+shape = SubResource("RectangleShape2D_efxa6")
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 position = Vector2(-122, 436)

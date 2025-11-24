@@ -39,16 +39,16 @@ texture = ExtResource("2_nqeel")
 position = Vector2(-402, 585)
 texture = ExtResource("3_u5lf4")
 
-[node name="Level3Higher" type="Sprite2D" parent="StaticBody2D/Level3Lower2"]
-position = Vector2(2312, -465)
+[node name="Level3Higher3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1910, 120)
 texture = ExtResource("1_h8oof")
 
-[node name="Level3" type="Sprite2D" parent="StaticBody2D/Level3Lower2"]
-position = Vector2(2310, -194)
+[node name="Level5" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1908, 391)
 texture = ExtResource("2_nqeel")
 
-[node name="Level3Lower" type="Sprite2D" parent="StaticBody2D/Level3Lower2"]
-position = Vector2(2311, -1)
+[node name="Level3Lower3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1909, 584)
 texture = ExtResource("3_u5lf4")
 
 [node name="Level3Higher" type="Sprite2D" parent="StaticBody2D"]

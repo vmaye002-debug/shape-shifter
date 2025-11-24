@@ -1,10 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3vhm70c2a4he"]
+[gd_scene load_steps=7 format=3 uid="uid://d3vhm70c2a4he"]
 
 [ext_resource type="Script" uid="uid://buxe25pbb5hs8" path="res://Circle Enemy/circle_enemy.gd" id="1_xxftg"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_7ktho"]
 radius = 25.0
 height = 50.0
+
+[sub_resource type="Gradient" id="Gradient_xxftg"]
+colors = PackedColorArray(0, 0, 0, 1, 1.2648509, 0.27353495, 0.40546402, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m1e8c"]
+gradient = SubResource("Gradient_xxftg")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ktho"]
 radius = 24.04163
@@ -19,6 +25,7 @@ speed_spawn = Vector2(-60000, 0)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 mesh = SubResource("SphereMesh_7ktho")
+texture = SubResource("GradientTexture2D_m1e8c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7ktho")

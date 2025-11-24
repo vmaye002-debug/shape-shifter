@@ -1,0 +1,138 @@
+[gd_scene load_steps=12 format=3 uid="uid://g3vusthp4ctf"]
+
+[ext_resource type="Texture2D" uid="uid://dxnro1mjefj3w" path="res://Level 3 higher.png" id="1_lhhoo"]
+[ext_resource type="Texture2D" uid="uid://d027l4x60o7tu" path="res://Level 3.png" id="2_ufpxx"]
+[ext_resource type="Texture2D" uid="uid://cggbkx02r8iy" path="res://Level 3 lower.png" id="3_67ewg"]
+[ext_resource type="PackedScene" uid="uid://bs1m7tu6y31jk" path="res://enemy_square.tscn" id="4_knvoa"]
+[ext_resource type="PackedScene" uid="uid://bth6weqqvlgei" path="res://finish_flag.tscn" id="5_er5cn"]
+[ext_resource type="PackedScene" uid="uid://crngtnpxtq2w2" path="res://BossLevel.tscn" id="6_67ewg"]
+[ext_resource type="Texture2D" uid="uid://bjnkgr0oxholf" path="res://Flag 2.png" id="6_rjmri"]
+[ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="7_cvbi2"]
+[ext_resource type="PackedScene" uid="uid://d3vhm70c2a4he" path="res://Circle Enemy/circle_enemy.tscn" id="9_knvoa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oprh5"]
+size = Vector2(2323, 309)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uu4cx"]
+size = Vector2(147, 970)
+
+[node name="Level5" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Level3Higher2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-401, 121)
+texture = ExtResource("1_lhhoo")
+
+[node name="Level4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-403, 392)
+texture = ExtResource("2_ufpxx")
+
+[node name="Level3Lower2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-402, 585)
+texture = ExtResource("3_67ewg")
+
+[node name="Level3Higher" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(754, 120)
+texture = ExtResource("1_lhhoo")
+
+[node name="Level3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(752, 391)
+texture = ExtResource("2_ufpxx")
+
+[node name="Level3Lower" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(753, 584)
+texture = ExtResource("3_67ewg")
+
+[node name="Level3Higher3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1910, 120)
+texture = ExtResource("1_lhhoo")
+
+[node name="Level5" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1908, 391)
+texture = ExtResource("2_ufpxx")
+
+[node name="Level3Lower3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1909, 584)
+texture = ExtResource("3_67ewg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1162.5, 682.5)
+shape = SubResource("RectangleShape2D_oprh5")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2400, 354)
+shape = SubResource("RectangleShape2D_uu4cx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-76, 354)
+shape = SubResource("RectangleShape2D_uu4cx")
+
+[node name="Enemy5" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(1104, 165)
+
+[node name="Enemy6" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(1005, 165)
+
+[node name="Enemy4" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(905, 165)
+
+[node name="Enemy7" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(797, 165)
+
+[node name="Enemy3" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(694, 165)
+
+[node name="Enemy8" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(576, 165)
+
+[node name="Enemy9" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(471, 165)
+
+[node name="Enemy" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(260, 165)
+
+[node name="Enemy10" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(2053, 165)
+
+[node name="Enemy11" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(1954, 165)
+
+[node name="Enemy12" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(1854, 165)
+
+[node name="Enemy13" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(1746, 165)
+
+[node name="Enemy14" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(1643, 165)
+
+[node name="Enemy15" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(1525, 165)
+
+[node name="Enemy16" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(1420, 165)
+
+[node name="Enemy17" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(1209, 165)
+
+[node name="Enemy18" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(1318, 165)
+
+[node name="Enemy2" parent="StaticBody2D" instance=ExtResource("4_knvoa")]
+position = Vector2(369, 165)
+
+[node name="FinishFlag" parent="StaticBody2D" instance=ExtResource("5_er5cn")]
+position = Vector2(2226, 401)
+next_level = ExtResource("6_67ewg")
+
+[node name="Flag2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1510, 388)
+texture = ExtResource("6_rjmri")
+
+[node name="Player" parent="." instance=ExtResource("7_cvbi2")]
+position = Vector2(47, 476)
+
+[node name="Circle Enemy" parent="." instance=ExtResource("9_knvoa")]
+position = Vector2(2148, 480)
+speed_spawn = Vector2(-80000, 0)
