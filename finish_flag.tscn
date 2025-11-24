@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bth6weqqvlgei"]
+[gd_scene load_steps=3 format=3 uid="uid://bth6weqqvlgei"]
 
 [ext_resource type="Script" uid="uid://bpgd748g7ke38" path="res://finish_flag.gd" id="1_am467"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_am467"]
 size = Vector2(50, 200)
-
-[sub_resource type="QuadMesh" id="QuadMesh_am467"]
 
 [node name="FinishFlag" type="Area2D"]
 collision_mask = 2
@@ -13,9 +11,5 @@ script = ExtResource("1_am467")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_am467")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-scale = Vector2(27.000002, 167.4)
-mesh = SubResource("QuadMesh_am467")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

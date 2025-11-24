@@ -7,10 +7,10 @@ var _start_y: float = 0.0
 var _time_elapsed: float = 0.0
 
 @export var area: Area2D
+@export var ending: PackedScene # This holds your .tscn file
 
 func _ready() -> void:
 	_start_y = position.y 
-	pass
 
 func _process(delta: float) -> void:
 	_time_elapsed += delta
@@ -34,11 +34,12 @@ func _play_ending_sequence(player_body: Node2D) -> void:
 		player_body.linear_velocity = Vector2.ZERO
 		player_body.angular_velocity = 0.0
 	
+	# Create a temporary UI layer for the fade effect
 	var canvas_layer = CanvasLayer.new()
 	get_tree().root.add_child(canvas_layer)
 	
 	var fade_rect = ColorRect.new()
-	fade_rect.color = Color(0, 0, 0, 0)
+	fade_rect.color = Color(0, 0, 0, 0) # Start transparent black
 	fade_rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	canvas_layer.add_child(fade_rect)
 	
@@ -52,6 +53,12 @@ func _play_ending_sequence(player_body: Node2D) -> void:
 
 	tween.tween_property(fade_rect, "color:a", 1.0, 2.5)
 	
+	# CHAIN: Wait for the previous parallel tweens to finish
 	tween.chain().tween_callback(func():
 		print("Game Over sequence finished.")
+		if ending:
+			# This actually changes the scene
+			get_tree().change_scene_to_packed(ending)
+		else:
+			push_error("Ending scene not assigned in Inspector!")
 	)

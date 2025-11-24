@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://crngtnpxtq2w2"]
+[gd_scene load_steps=19 format=3 uid="uid://crngtnpxtq2w2"]
 
 [ext_resource type="Texture2D" uid="uid://bfr1eqm5jmeyi" path="res://IMG_1307.PNG" id="1_0twmt"]
 [ext_resource type="Script" uid="uid://begbt55gom54g" path="res://boss_level.gd" id="1_3cqon"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://tnm6rbmarybj" path="res://Circle Enemy/Princess Heart.png" id="7_hu5q4"]
 [ext_resource type="Script" uid="uid://f3h1i70orpue" path="res://princess_heart.gd" id="8_3cqon"]
 [ext_resource type="Texture2D" uid="uid://pnna6o4evf2q" path="res://Circle Enemy/Cage.png" id="9_mrcxj"]
+[ext_resource type="PackedScene" uid="uid://cd2fc1b4gor8w" path="res://EndingMonalogue.tscn" id="10_mrcxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cqon"]
 size = Vector2(1498.5, 155)
@@ -159,7 +160,7 @@ shape = SubResource("RectangleShape2D_hu5q4")
 
 [node name="cant COUNT this boss" parent="." node_paths=PackedStringArray("triangle_area", "square_area") instance=ExtResource("4_7b2gy")]
 position = Vector2(837, 460)
-health = 3
+health = 1
 spawn_rate = 1.0
 warning_scene = ExtResource("6_prt80")
 triangle_area = NodePath("../Triangle")
@@ -178,6 +179,7 @@ scale = Vector2(0.13, 0.13)
 texture = ExtResource("7_hu5q4")
 script = ExtResource("8_3cqon")
 area = NodePath("Area2D")
+ending = ExtResource("10_mrcxj")
 
 [node name="Area2D" type="Area2D" parent="Node2D/PrincessHeart"]
 monitoring = false

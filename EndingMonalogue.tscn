@@ -5,5 +5,11 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 20.0
+offset_top = 37.0
+offset_right = 736.0
+offset_bottom = 380.0
+bbcode_enabled = true
+text = "lol i guess you saved me or something... thanks i guess. untill next time. 
+
+"
