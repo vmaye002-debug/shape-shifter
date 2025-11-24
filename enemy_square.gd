@@ -10,10 +10,11 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		returning = true
-		if collision.get_collider().name == "Player" and collision.get_collider().state_now == "T":
-			queue_free()
-		else:
-			collision.get_collider().player_die_lol()
+		if collision.get_collider().name == "Player":
+			if collision.get_collider().state_now == "T":
+				queue_free()
+			else:
+				collision.get_collider().player_die_lol()
 			
 	if returning:
 		if position.y > startingY:
