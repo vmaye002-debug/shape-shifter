@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://di4bicnfbayui"]
+[gd_scene load_steps=18 format=3 uid="uid://di4bicnfbayui"]
 
 [ext_resource type="Texture2D" uid="uid://cvldxsg5b5g6y" path="res://Level 2 lower.png" id="1_46pvi"]
 [ext_resource type="Texture2D" uid="uid://crgtwstjtppa3" path="res://Level 2.png" id="1_psxy2"]
@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dtwiiq0nc46rs" path="res://Level 2(fixed).png" id="2_wwdpc"]
 [ext_resource type="PackedScene" uid="uid://bth6weqqvlgei" path="res://finish_flag.tscn" id="3_6faey"]
 [ext_resource type="PackedScene" uid="uid://cwut1arkaendl" path="res://enemy_triangle.tscn" id="4_6faey"]
-[ext_resource type="PackedScene" uid="uid://d08jg36au575w" path="res://Menu.tscn" id="4_nc7oo"]
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="5_6x3wt"]
 [ext_resource type="PackedScene" uid="uid://bs1m7tu6y31jk" path="res://enemy_square.tscn" id="5_nc7oo"]
+[ext_resource type="PackedScene" uid="uid://cd5ostc3uvy2b" path="res://Level3.tscn" id="6_46pvi"]
 [ext_resource type="PackedScene" uid="uid://dsqqh8fvkltgb" path="res://Circle Enemy/Spawner.tscn" id="7_6x3wt"]
 [ext_resource type="Texture2D" uid="uid://bjnkgr0oxholf" path="res://Flag 2.png" id="9_pj4lr"]
 
@@ -27,22 +27,73 @@ size = Vector2(136, 34)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nc7oo"]
 size = Vector2(67, 53)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvkd4"]
+size = Vector2(171, 743)
+
 [node name="Level2" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1501, 402)
 
-[node name="Level2Lower" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-752, -34)
+[node name="Level2Lower5" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(136, -31)
 texture = ExtResource("1_46pvi")
 
-[node name="Level2Lower2" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(748, -31)
+[node name="Level2Higher5" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(134, -414)
+texture = ExtResource("2_fvkd4")
+
+[node name="Level2Lower6" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1636, -28)
+texture = ExtResource("1_46pvi")
+
+[node name="Level2Higher6" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1631, -414)
+texture = ExtResource("2_fvkd4")
+
+[node name="Level4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(137.5, -191)
+texture = ExtResource("1_psxy2")
+
+[node name="Level2(fixed)3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1632.5, -191)
+texture = ExtResource("2_wwdpc")
+
+[node name="Level2Lower3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-1449, -43)
+texture = ExtResource("1_46pvi")
+
+[node name="Level2Higher3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-1451, -426)
+texture = ExtResource("2_fvkd4")
+
+[node name="Level2Lower4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(51, -40)
+texture = ExtResource("1_46pvi")
+
+[node name="Level2Higher4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(46, -426)
+texture = ExtResource("2_fvkd4")
+
+[node name="Level3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-1447.5, -203)
+texture = ExtResource("1_psxy2")
+
+[node name="Level2(fixed)2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(47.5, -203)
+texture = ExtResource("2_wwdpc")
+
+[node name="Level2Lower" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-752, -34)
 texture = ExtResource("1_46pvi")
 
 [node name="Level2Higher" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(-754, -417)
 texture = ExtResource("2_fvkd4")
+
+[node name="Level2Lower2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(748, -31)
+texture = ExtResource("1_46pvi")
 
 [node name="Level2Higher2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(743, -417)
@@ -58,7 +109,7 @@ texture = ExtResource("2_wwdpc")
 
 [node name="FinishFlag" parent="StaticBody2D" instance=ExtResource("3_6faey")]
 position = Vector2(1420, -153)
-next_level = ExtResource("4_nc7oo")
+next_level = ExtResource("6_46pvi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_3453u")
@@ -102,6 +153,14 @@ shape = SubResource("RectangleShape2D_nc7oo")
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1023, -84.5)
 shape = SubResource("RectangleShape2D_nc7oo")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1588, -302)
+shape = SubResource("RectangleShape2D_fvkd4")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1587, -307.5)
+shape = SubResource("RectangleShape2D_fvkd4")
 
 [node name="Node2D" parent="StaticBody2D" instance=ExtResource("4_6faey")]
 position = Vector2(-531, -232)
