@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3vhm70c2a4he"]
+
+[ext_resource type="Script" uid="uid://buxe25pbb5hs8" path="res://Circle Enemy/circle_enemy.gd" id="1_xxftg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7ktho"]
+radius = 25.0
+height = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ktho"]
+radius = 24.04163
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxftg"]
+radius = 30.149628
+
+[node name="Circle Enemy" type="RigidBody2D"]
+script = ExtResource("1_xxftg")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("SphereMesh_7ktho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7ktho")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xxftg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
