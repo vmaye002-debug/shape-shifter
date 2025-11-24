@@ -36,47 +36,47 @@ size = Vector2(171, 743)
 position = Vector2(1501, 402)
 
 [node name="Level2Lower5" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(136, -31)
+position = Vector2(136, -44)
 texture = ExtResource("1_46pvi")
 
 [node name="Level2Higher5" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(134, -414)
+position = Vector2(134, -415)
 texture = ExtResource("2_fvkd4")
 
 [node name="Level2Lower6" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(1636, -28)
+position = Vector2(1636, -44)
 texture = ExtResource("1_46pvi")
 
 [node name="Level2Higher6" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(1631, -414)
+position = Vector2(1631, -415)
 texture = ExtResource("2_fvkd4")
 
 [node name="Level4" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(137.5, -191)
+position = Vector2(137.5, -190)
 texture = ExtResource("1_psxy2")
 
 [node name="Level2(fixed)3" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(1632.5, -191)
+position = Vector2(1632.5, -190)
 texture = ExtResource("2_wwdpc")
 
 [node name="Level2Lower3" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-1449, -43)
+position = Vector2(-1951, -44)
 texture = ExtResource("1_46pvi")
 
 [node name="Level2Higher3" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-1451, -426)
+position = Vector2(-1953, -415)
 texture = ExtResource("2_fvkd4")
 
 [node name="Level2Lower4" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(51, -40)
+position = Vector2(51, -44)
 texture = ExtResource("1_46pvi")
 
 [node name="Level2Higher4" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(46, -426)
+position = Vector2(46, -415)
 texture = ExtResource("2_fvkd4")
 
 [node name="Level3" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-1447.5, -203)
+position = Vector2(-1949.5, -190)
 texture = ExtResource("1_psxy2")
 
 [node name="Level2(fixed)2" type="Sprite2D" parent="StaticBody2D"]
@@ -84,27 +84,27 @@ position = Vector2(47.5, -203)
 texture = ExtResource("2_wwdpc")
 
 [node name="Level2Lower" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-752, -34)
+position = Vector2(-752, -44)
 texture = ExtResource("1_46pvi")
 
-[node name="Level2Higher" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-754, -417)
-texture = ExtResource("2_fvkd4")
-
 [node name="Level2Lower2" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(748, -31)
+position = Vector2(748, -44)
 texture = ExtResource("1_46pvi")
 
 [node name="Level2Higher2" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(743, -417)
+position = Vector2(743, -415)
+texture = ExtResource("2_fvkd4")
+
+[node name="Level2Higher" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-754, -415)
 texture = ExtResource("2_fvkd4")
 
 [node name="Level2" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-750.5, -194)
+position = Vector2(-750.5, -190)
 texture = ExtResource("1_psxy2")
 
 [node name="Level2(fixed)" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(744.5, -194)
+position = Vector2(744.5, -190)
 texture = ExtResource("2_wwdpc")
 
 [node name="FinishFlag" parent="StaticBody2D" instance=ExtResource("3_6faey")]
