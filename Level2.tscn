@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://di4bicnfbayui"]
+[gd_scene load_steps=17 format=3 uid="uid://di4bicnfbayui"]
 
+[ext_resource type="Texture2D" uid="uid://cvldxsg5b5g6y" path="res://Level 2 lower.png" id="1_46pvi"]
 [ext_resource type="Texture2D" uid="uid://crgtwstjtppa3" path="res://Level 2.png" id="1_psxy2"]
+[ext_resource type="Texture2D" uid="uid://dvfav51h3kx83" path="res://Level 2 Higher.png" id="2_fvkd4"]
 [ext_resource type="Texture2D" uid="uid://dtwiiq0nc46rs" path="res://Level 2(fixed).png" id="2_wwdpc"]
 [ext_resource type="PackedScene" uid="uid://bth6weqqvlgei" path="res://finish_flag.tscn" id="3_6faey"]
 [ext_resource type="PackedScene" uid="uid://cwut1arkaendl" path="res://enemy_triangle.tscn" id="4_6faey"]
@@ -8,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="5_6x3wt"]
 [ext_resource type="PackedScene" uid="uid://bs1m7tu6y31jk" path="res://enemy_square.tscn" id="5_nc7oo"]
 [ext_resource type="PackedScene" uid="uid://dsqqh8fvkltgb" path="res://Circle Enemy/Spawner.tscn" id="7_6x3wt"]
+[ext_resource type="Texture2D" uid="uid://bjnkgr0oxholf" path="res://Flag 2.png" id="9_pj4lr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3453u"]
 size = Vector2(3001, 114)
@@ -29,6 +32,22 @@ size = Vector2(67, 53)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1501, 402)
 
+[node name="Level2Lower" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-752, -34)
+texture = ExtResource("1_46pvi")
+
+[node name="Level2Lower2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(748, -31)
+texture = ExtResource("1_46pvi")
+
+[node name="Level2Higher" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-754, -417)
+texture = ExtResource("2_fvkd4")
+
+[node name="Level2Higher2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(743, -417)
+texture = ExtResource("2_fvkd4")
+
 [node name="Level2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(-750.5, -194)
 texture = ExtResource("1_psxy2")
@@ -38,7 +57,7 @@ position = Vector2(744.5, -194)
 texture = ExtResource("2_wwdpc")
 
 [node name="FinishFlag" parent="StaticBody2D" instance=ExtResource("3_6faey")]
-position = Vector2(1417.5, -204)
+position = Vector2(1420, -153)
 next_level = ExtResource("4_nc7oo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -134,6 +153,10 @@ position = Vector2(797, -57)
 
 [node name="Node2D16" parent="StaticBody2D" instance=ExtResource("4_6faey")]
 position = Vector2(840, -57)
+
+[node name="Flag2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(707, -193)
+texture = ExtResource("9_pj4lr")
 
 [node name="Player" parent="." instance=ExtResource("5_6x3wt")]
 position = Vector2(110, 253)

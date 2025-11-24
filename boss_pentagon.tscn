@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://clt4u50b83q5t"]
+[gd_scene load_steps=3 format=3 uid="uid://u68ncujljw17"]
 
 [ext_resource type="Script" uid="uid://2t2cthiu7owv" path="res://boss_pentagon.gd" id="1_gfht3"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_hvvpq"]
 size = Vector2(30, 30)
 
-[node name="Node2D" type="RigidBody2D"]
+[node name="cant COUNT this boss" type="RigidBody2D"]
 script = ExtResource("1_gfht3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

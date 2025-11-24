@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://3fytn1wf2xio"]
+[gd_scene load_steps=17 format=3 uid="uid://3fytn1wf2xio"]
 
 [ext_resource type="Texture2D" uid="uid://bqiefpxw12mk0" path="res://Level 1.png" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://cnugqjrjtyww6" path="res://Level 1 Higher.png" id="1_kek77"]
 [ext_resource type="PackedScene" uid="uid://bs1m7tu6y31jk" path="res://enemy_square.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://d24v6fxfevq0e" path="res://Level 1 Lower.png" id="2_4c57u"]
 [ext_resource type="PackedScene" uid="uid://cwut1arkaendl" path="res://enemy_triangle.tscn" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://d3vhm70c2a4he" path="res://Circle Enemy/circle_enemy.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://bth6weqqvlgei" path="res://finish_flag.tscn" id="6_5vw27"]
@@ -32,6 +34,14 @@ size = Vector2(201, 14)
 [node name="Main" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Level1Higher" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(497, 150)
+texture = ExtResource("1_kek77")
+
+[node name="Level1Lower" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(497, 519)
+texture = ExtResource("2_4c57u")
 
 [node name="Level1" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(496, 375)
