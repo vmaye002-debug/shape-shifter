@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwut1arkaendl"]
+
+[ext_resource type="Script" uid="uid://dk3k02j25ycmi" path="res://enemy_triangle.gd" id="1_bhdcv"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_4n1b3"]
+size = Vector3(50, -50, 0)
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_bhdcv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(25, 0, -25, 0, 0, -50)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CollisionPolygon2D"]
+position = Vector2(0, -25)
+mesh = SubResource("PrismMesh_4n1b3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(30, 0, -30, 0, 0, -60)

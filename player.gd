@@ -12,7 +12,7 @@ var on_floor: bool = false
 var state_now: String = "C"
 var last_state: String = "C"
 
-
+@export var death_window: PackedScene
 
 var forces: Vector2 = Vector2(0,0)
 var jump_force: Vector2 = Vector2(0,0)
@@ -20,6 +20,7 @@ var rot_force: Vector2 = Vector2(0,0)
 var gravity: = Vector2(0,0)
 
 func _ready() -> void:
+
 	for child in get_children():
 		if child is MeshInstance2D:
 			shapes.append(child)
@@ -29,6 +30,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	
 	
 	if Input.is_action_pressed("right"):
+		
 		#print("pressing right")
 		if state_now != "S":
 			forces  += Vector2(50,0)
@@ -66,7 +68,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var horizontal_speed = horizontal_velocity.length()
 	
 
-	if horizontal_speed > 300:
+	if horizontal_speed > 500:
 		# Normalize the horizontal vector (length becomes 1)
 		# Then, scale it by the maximum allowed speed
 		horizontal_velocity = horizontal_velocity.normalized() * 300
@@ -124,4 +126,11 @@ func hide_but_one(nameToShow: String, shape_list: Array[MeshInstance2D] = shapes
 		if x.name == nameToShow:
 			x.show()
 			print("Showing: ", x.name)
+
+func player_die_lol() -> void:
+	var death: Control = death_window.instantiate()
+	get_parent().add_child(death)
+	var cam = $Camera2D
+	cam.reparent(get_parent())
+	queue_free()
 	
