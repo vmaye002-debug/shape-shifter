@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://elxk53rop7f7"]
+[gd_scene load_steps=8 format=3 uid="uid://crngtnpxtq2w2"]
 
 [ext_resource type="Texture2D" uid="uid://bfr1eqm5jmeyi" path="res://IMG_1307.PNG" id="1_0twmt"]
 [ext_resource type="Texture2D" uid="uid://m17guwhnxrxw" path="res://IMG_1306.PNG" id="2_prt80"]
 [ext_resource type="Texture2D" uid="uid://cmcv4sko4s8s1" path="res://IMG_1305.PNG" id="3_p84dd"]
-[ext_resource type="PackedScene" uid="uid://clt4u50b83q5t" path="res://boss_pentagon.tscn" id="4_7b2gy"]
+[ext_resource type="PackedScene" uid="uid://u68ncujljw17" path="res://boss_pentagon.tscn" id="4_7b2gy"]
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="5_hu5q4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cqon"]
@@ -13,6 +13,18 @@ size = Vector2(1498.5, 155)
 size = Vector2(150, 829)
 
 [node name="BossLevel" type="Node2D"]
+
+[node name="Triangle" type="ReferenceRect" parent="."]
+offset_left = 52.0
+offset_top = 353.0
+offset_right = 997.0
+offset_bottom = 561.0
+
+[node name="Square" type="ReferenceRect" parent="."]
+offset_left = 45.0
+offset_top = 178.0
+offset_right = 1263.0
+offset_bottom = 330.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -64,8 +76,11 @@ shape = SubResource("RectangleShape2D_mrcxj")
 position = Vector2(-72, 264.5)
 shape = SubResource("RectangleShape2D_mrcxj")
 
-[node name="cant COUNT this boss" parent="StaticBody2D" instance=ExtResource("4_7b2gy")]
-position = Vector2(1216, 143)
-
 [node name="Player" parent="StaticBody2D" instance=ExtResource("5_hu5q4")]
 position = Vector2(369, 442)
+
+[node name="cant COUNT this boss" parent="." node_paths=PackedStringArray("triangle_area", "square_area") instance=ExtResource("4_7b2gy")]
+position = Vector2(837, 460)
+health = 4
+triangle_area = NodePath("../Triangle")
+square_area = NodePath("../Square")
