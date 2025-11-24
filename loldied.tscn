@@ -1,8 +1,12 @@
-[gd_scene format=3 uid="uid://xy7h8fu1uemh"]
+[gd_scene load_steps=2 format=3 uid="uid://xy7h8fu1uemh"]
 
-[node name="loldied" type="Control"]
+[ext_resource type="Script" uid="uid://bg7so2a6glrgt" path="res://loldie.gd" id="1_7wwpi"]
+
+[node name="loldied" type="Control" node_paths=PackedStringArray("restart_button")]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_7wwpi")
+restart_button = NodePath("CanvasLayer/Button")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
