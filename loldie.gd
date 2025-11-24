@@ -7,8 +7,12 @@ func _ready():
 	if restart_button:
 		restart_button.pressed.connect(_on_restart_button_pressed)
 
-
 func _on_restart_button_pressed():
-	get_tree().reload_current_scene()
+
+	var current_scene_path = get_tree().current_scene.scene_file_path
 	
-	queue_free()
+	call_deferred("reset_scene", current_scene_path)
+
+func reset_scene(path: String):
+
+	get_tree().change_scene_to_file(path)

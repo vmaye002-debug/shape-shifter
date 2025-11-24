@@ -16,5 +16,5 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	var what: Node2D = what_to_spawn.instantiate()
-	get_tree().root.add_child(what)
+	get_tree().current_scene.add_child(what)
 	what.position = position
