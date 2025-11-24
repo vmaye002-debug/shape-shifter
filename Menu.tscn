@@ -94,7 +94,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_lthh4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ylpcl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cx167")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dolsu")
-text = "GET TF OUTTA HERE-"
+text = "Exit"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
