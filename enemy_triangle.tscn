@@ -16,6 +16,7 @@ position = Vector2(0, -25)
 mesh = SubResource("PrismMesh_4n1b3")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(30, 0, -30, 0, 0, -60)

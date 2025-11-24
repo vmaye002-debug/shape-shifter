@@ -18,5 +18,6 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.state_now == "S":
 		queue_free()
-	print(body)
+	else:
+		body.player_die_lol()
 	pass # Replace with function body.

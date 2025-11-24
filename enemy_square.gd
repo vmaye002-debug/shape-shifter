@@ -10,8 +10,11 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		returning = true
-		if collision.get_collider().name == "Player" and collision.get_collider().state_now == "T":
-			queue_free()
+		if collision.get_collider().name == "Player":
+			if collision.get_collider().state_now == "T":
+				queue_free()
+			else:
+				collision.get_collider().player_die_lol()
 			
 	if returning:
 		if position.y > startingY:
@@ -26,7 +29,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(body)
 	velocity.y = dropSpeed;
 	pass # Replace with function body.
 
