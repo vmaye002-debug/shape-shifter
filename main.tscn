@@ -76,3 +76,4 @@ position = Vector2(565, 576)
 
 [node name="Circle Enemy" parent="." instance=ExtResource("5_272bh")]
 position = Vector2(1114, 482)
+speed_spawn = Vector2(-60000, 0)
