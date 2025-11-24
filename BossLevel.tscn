@@ -1,14 +1,14 @@
 [gd_scene load_steps=18 format=3 uid="uid://crngtnpxtq2w2"]
 
 [ext_resource type="Texture2D" uid="uid://bfr1eqm5jmeyi" path="res://IMG_1307.PNG" id="1_0twmt"]
-[ext_resource type="Script" path="res://boss_level.gd" id="1_3cqon"]
+[ext_resource type="Script" uid="uid://begbt55gom54g" path="res://boss_level.gd" id="1_3cqon"]
 [ext_resource type="Texture2D" uid="uid://m17guwhnxrxw" path="res://IMG_1306.PNG" id="2_prt80"]
 [ext_resource type="Texture2D" uid="uid://cmcv4sko4s8s1" path="res://IMG_1305.PNG" id="3_p84dd"]
 [ext_resource type="PackedScene" uid="uid://u68ncujljw17" path="res://boss_pentagon.tscn" id="4_7b2gy"]
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="5_hu5q4"]
 [ext_resource type="PackedScene" uid="uid://btfkwalfpjbyr" path="res://warning.tscn" id="6_prt80"]
 [ext_resource type="Texture2D" uid="uid://tnm6rbmarybj" path="res://Circle Enemy/Princess Heart.png" id="7_hu5q4"]
-[ext_resource type="Script" path="res://princess_heart.gd" id="8_3cqon"]
+[ext_resource type="Script" uid="uid://f3h1i70orpue" path="res://princess_heart.gd" id="8_3cqon"]
 [ext_resource type="Texture2D" uid="uid://pnna6o4evf2q" path="res://Circle Enemy/Cage.png" id="9_mrcxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cqon"]
@@ -19,33 +19,6 @@ size = Vector2(150, 829)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hu5q4"]
 size = Vector2(2000, 77)
-
-[sub_resource type="Animation" id="Animation_3cqon"]
-resource_name = "princessNickCage"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Node2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(-2, 145)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node2D/PrincessHeart:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.63, 0.99),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(310, 290), Vector2(311.98947, 291.76315), Vector2(488, 319)]
-}
 
 [sub_resource type="Animation" id="Animation_mrcxj"]
 length = 0.001
@@ -72,6 +45,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(322, 283)]
+}
+
+[sub_resource type="Animation" id="Animation_3cqon"]
+resource_name = "princessNickCage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-2, 145)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/PrincessHeart:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.63, 0.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(310, 290), Vector2(311.98947, 291.76315), Vector2(488, 319)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wspy4"]
@@ -159,7 +159,7 @@ shape = SubResource("RectangleShape2D_hu5q4")
 
 [node name="cant COUNT this boss" parent="." node_paths=PackedStringArray("triangle_area", "square_area") instance=ExtResource("4_7b2gy")]
 position = Vector2(837, 460)
-health = 1
+health = 3
 spawn_rate = 1.0
 warning_scene = ExtResource("6_prt80")
 triangle_area = NodePath("../Triangle")

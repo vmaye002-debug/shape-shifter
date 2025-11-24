@@ -63,7 +63,7 @@ func _on_collision(body: Node) -> void:
 
 func _start_invulnerability() -> void:
 	is_invulnerable = true
-	modulate.a = 0.5 
+	modulate.a = 0.3 
 	
 	await get_tree().create_timer(1.0).timeout
 	
