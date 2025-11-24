@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://d08jg36au575w"]
+
+[ext_resource type="Script" uid="uid://u8lxn6g03ewm" path="res://menu.gd" id="1_5yleq"]
+[ext_resource type="Texture2D" uid="uid://bqiefpxw12mk0" path="res://Level 1.png" id="1_uubjt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5yleq"]
+texture = ExtResource("1_uubjt")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
+modulate_color = Color(0.9116014, 0.9116014, 0.9116014, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lthh4"]
+bg_color = Color(0.2798937, 0.6270837, 0.8709434, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylpcl"]
+bg_color = Color(0.12269702, 0.4046077, 0.5891162, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx167"]
+bg_color = Color(0.08375511, 0.31043434, 0.45809835, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 11
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dolsu"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5yleq")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5yleq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.25
+offset_top = -80.5
+offset_right = 169.25
+offset_bottom = 80.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_lthh4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ylpcl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cx167")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dolsu")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_lthh4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ylpcl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cx167")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dolsu")
+text = "GET TF OUTTA HERE-"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.35300002
+offset_left = -39.0
+offset_top = 120.0
+offset_right = 39.0
+offset_bottom = -85.744
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Shape Up!"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_quit_pressed"]
