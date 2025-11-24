@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://crgtwstjtppa3" path="res://Level 2.png" id="1_psxy2"]
 [ext_resource type="Texture2D" uid="uid://dtwiiq0nc46rs" path="res://Level 2(fixed).png" id="2_wwdpc"]
 [ext_resource type="PackedScene" path="res://finish_flag.tscn" id="3_6faey"]
-[ext_resource type="PackedScene" uid="uid://hkmqg5nkkng1" path="res://Level1.tscn" id="4_nc7oo"]
+
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="5_6x3wt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3453u"]
@@ -36,7 +36,7 @@ texture = ExtResource("2_wwdpc")
 
 [node name="FinishFlag" parent="StaticBody2D" instance=ExtResource("3_6faey")]
 position = Vector2(1417.5, -204)
-next_level = ExtResource("4_nc7oo")
+
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_3453u")

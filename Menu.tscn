@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d08jg36au575w"]
+[gd_scene load_steps=9 format=3 uid="uid://d08jg36au575w"]
 
 [ext_resource type="Script" uid="uid://u8lxn6g03ewm" path="res://menu.gd" id="1_5yleq"]
 [ext_resource type="Texture2D" uid="uid://dwyfsx1kd163a" path="res://Main menu background.png" id="2_5yleq"]
+[ext_resource type="FontFile" uid="uid://ch3rytoxdycqw" path="res://Oups_Clean.otf" id="3_ylpcl"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5yleq"]
 texture = ExtResource("2_5yleq")
@@ -99,12 +100,15 @@ anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.35300002
-offset_left = -39.0
-offset_top = 120.0
-offset_right = 39.0
-offset_bottom = -85.744
+offset_left = -219.0
+offset_top = 43.0
+offset_right = 219.0
+offset_bottom = -67.744
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.09809692, 0.29274338, 0.3526346, 1)
+theme_override_colors/font_outline_color = Color(0, 1.7445444, 0, 1)
+theme_override_fonts/font = ExtResource("3_ylpcl")
+theme_override_font_sizes/font_size = 100
 text = "Shape Up!"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
