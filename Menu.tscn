@@ -1,12 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://d08jg36au575w"]
 
 [ext_resource type="Script" uid="uid://u8lxn6g03ewm" path="res://menu.gd" id="1_5yleq"]
-[ext_resource type="Texture2D" uid="uid://bqiefpxw12mk0" path="res://Level 1.png" id="1_uubjt"]
+[ext_resource type="Texture2D" uid="uid://dwyfsx1kd163a" path="res://Main menu background.png" id="2_5yleq"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5yleq"]
-texture = ExtResource("1_uubjt")
+texture = ExtResource("2_5yleq")
 axis_stretch_horizontal = 1
-axis_stretch_vertical = 2
 modulate_color = Color(0.9116014, 0.9116014, 0.9116014, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lthh4"]
