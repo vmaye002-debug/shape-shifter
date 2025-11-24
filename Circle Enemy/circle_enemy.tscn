@@ -13,6 +13,7 @@ radius = 24.04163
 radius = 30.149628
 
 [node name="Circle Enemy" type="RigidBody2D"]
+collision_mask = 3
 script = ExtResource("1_xxftg")
 speed_spawn = Vector2(-60000, 0)
 
