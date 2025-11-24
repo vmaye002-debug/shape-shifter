@@ -5,7 +5,7 @@ extends Node2D
 func _ready() -> void:
 	pass # Replace with function body.
 
-
+@export var princess: Sprite2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_cant_count_this_boss_died() -> void:
 	anim_play.play("princessNickCage")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	princess.activate_thyself()

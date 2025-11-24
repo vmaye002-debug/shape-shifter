@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://crngtnpxtq2w2"]
+[gd_scene load_steps=18 format=3 uid="uid://crngtnpxtq2w2"]
 
 [ext_resource type="Texture2D" uid="uid://bfr1eqm5jmeyi" path="res://IMG_1307.PNG" id="1_0twmt"]
 [ext_resource type="Script" uid="uid://begbt55gom54g" path="res://boss_level.gd" id="1_3cqon"]
@@ -71,7 +71,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(488, 319)]
+"values": [Vector2(322, 283)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wspy4"]
@@ -80,9 +80,13 @@ _data = {
 &"princessNickCage": SubResource("Animation_3cqon")
 }
 
-[node name="BossLevel" type="Node2D" node_paths=PackedStringArray("anim_play")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wspy4"]
+size = Vector2(500, 500)
+
+[node name="BossLevel" type="Node2D" node_paths=PackedStringArray("anim_play", "princess")]
 script = ExtResource("1_3cqon")
 anim_play = NodePath("AnimationPlayer")
+princess = NodePath("Node2D/PrincessHeart")
 
 [node name="Triangle" type="ReferenceRect" parent="."]
 offset_left = 52.0
@@ -168,14 +172,27 @@ libraries = {
 
 [node name="Node2D" type="Node2D" parent="."]
 
-[node name="PrincessHeart" type="Sprite2D" parent="Node2D"]
-position = Vector2(488, 319)
+[node name="PrincessHeart" type="Sprite2D" parent="Node2D" node_paths=PackedStringArray("area")]
+position = Vector2(322, 283)
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("7_hu5q4")
 script = ExtResource("8_3cqon")
+area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="Node2D/PrincessHeart"]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/PrincessHeart/Area2D"]
+position = Vector2(446.15387, 46.153847)
+shape = SubResource("RectangleShape2D_wspy4")
 
 [node name="Cage" type="Sprite2D" parent="Node2D"]
 position = Vector2(71, 292)
 texture = ExtResource("9_mrcxj")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
 [connection signal="died" from="cant COUNT this boss" to="." method="_on_cant_count_this_boss_died"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Node2D/PrincessHeart/Area2D" to="Node2D/PrincessHeart" method="_on_area_2d_body_entered"]
