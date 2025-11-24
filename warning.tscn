@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://btfkwalfpjbyr"]
+[gd_scene load_steps=3 format=3 uid="uid://btfkwalfpjbyr"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_4frs0"]
-size = Vector2(50, 50)
-center_offset = Vector3(0, -25, 0)
+[ext_resource type="Texture2D" uid="uid://dponx084sihpn" path="res://Pentagon Warning.png" id="1_wdnif"]
+[ext_resource type="Script" uid="uid://d2ywblr46n15" path="res://warning.gd" id="2_jupec"]
 
-[sub_resource type="Gradient" id="Gradient_wdnif"]
+[node name="WARNING" type="Sprite2D"]
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("1_wdnif")
+script = ExtResource("2_jupec")
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jupec"]
-gradient = SubResource("Gradient_wdnif")
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
 
-[node name="WARNING" type="MeshInstance2D"]
-mesh = SubResource("QuadMesh_4frs0")
-texture = SubResource("GradientTexture1D_jupec")
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
