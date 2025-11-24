@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://di4bicnfbayui"]
+[gd_scene load_steps=13 format=3 uid="uid://di4bicnfbayui"]
 
 [ext_resource type="Texture2D" uid="uid://crgtwstjtppa3" path="res://Level 2.png" id="1_psxy2"]
 [ext_resource type="Texture2D" uid="uid://dtwiiq0nc46rs" path="res://Level 2(fixed).png" id="2_wwdpc"]
-[ext_resource type="PackedScene" path="res://finish_flag.tscn" id="3_6faey"]
-
+[ext_resource type="PackedScene" uid="uid://bth6weqqvlgei" path="res://finish_flag.tscn" id="3_6faey"]
+[ext_resource type="PackedScene" uid="uid://cwut1arkaendl" path="res://enemy_triangle.tscn" id="4_6faey"]
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="5_6x3wt"]
+[ext_resource type="PackedScene" uid="uid://bs1m7tu6y31jk" path="res://enemy_square.tscn" id="5_nc7oo"]
+[ext_resource type="PackedScene" uid="uid://dsqqh8fvkltgb" path="res://Circle Enemy/Spawner.tscn" id="7_6x3wt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3453u"]
 size = Vector2(3001, 114)
@@ -36,7 +38,6 @@ texture = ExtResource("2_wwdpc")
 
 [node name="FinishFlag" parent="StaticBody2D" instance=ExtResource("3_6faey")]
 position = Vector2(1417.5, -204)
-
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_3453u")
@@ -81,5 +82,71 @@ shape = SubResource("RectangleShape2D_nc7oo")
 position = Vector2(1023, -84.5)
 shape = SubResource("RectangleShape2D_nc7oo")
 
+[node name="Node2D" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(-531, -232)
+
+[node name="Node2D2" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(-836, -234)
+
+[node name="Enemy" parent="StaticBody2D" instance=ExtResource("5_nc7oo")]
+position = Vector2(28, -400)
+
+[node name="Node2D3" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(134, -57)
+
+[node name="Node2D4" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(193, -57)
+
+[node name="Node2D5" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(254, -57)
+
+[node name="Node2D6" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(310, -57)
+
+[node name="Node2D7" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(364, -57)
+
+[node name="Node2D8" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(420, -57)
+
+[node name="Node2D9" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(477, -57)
+
+[node name="Node2D10" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(533, -57)
+
+[node name="Node2D11" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(589, -57)
+
+[node name="Node2D12" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(642, -57)
+
+[node name="Node2D13" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(697, -57)
+
+[node name="Node2D14" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(748, -57)
+
+[node name="Node2D15" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(797, -57)
+
+[node name="Node2D16" parent="StaticBody2D" instance=ExtResource("4_6faey")]
+position = Vector2(840, -57)
+
 [node name="Player" parent="." instance=ExtResource("5_6x3wt")]
 position = Vector2(110, 253)
+
+[node name="Circle Spawner" parent="." instance=ExtResource("7_6x3wt")]
+position = Vector2(1437, 297)
+
+[node name="Node2D" parent="." instance=ExtResource("4_6faey")]
+position = Vector2(351, 167)
+
+[node name="Enemy" parent="." instance=ExtResource("5_nc7oo")]
+position = Vector2(2422, 6)
+
+[node name="Enemy2" parent="." instance=ExtResource("5_nc7oo")]
+position = Vector2(2605, 6)
+
+[node name="Enemy3" parent="." instance=ExtResource("5_nc7oo")]
+position = Vector2(2770, 6)
