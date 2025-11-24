@@ -1,3 +1,4 @@
+class_name player
 extends RigidBody2D
 
 
@@ -9,8 +10,8 @@ var shapes: Array[MeshInstance2D]
 @export var CSquare: CollisionShape2D 
 
 var on_floor: bool = false
-var state_now: String = "C"
-var last_state: String = "C"
+var state_now: String = "S"
+var last_state: String = "S"
 
 @export var death_window: PackedScene
 

@@ -39,19 +39,19 @@ CSquare = NodePath("CSquare")
 death_window = ExtResource("2_kpjcp")
 
 [node name="Square" type="MeshInstance2D" parent="."]
-visible = false
 mesh = SubResource("QuadMesh_0rwas")
 
 [node name="CSquare" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_0rwas")
-disabled = true
 
 [node name="Circle" type="MeshInstance2D" parent="."]
+visible = false
 mesh = SubResource("SphereMesh_xhfnw")
 
 [node name="CCircle" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_xhfnw")
+disabled = true
 
 [node name="Triangle" type="MeshInstance2D" parent="."]
 visible = false
