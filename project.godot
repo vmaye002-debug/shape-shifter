@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ShapeShifter"
-run/main_scene="uid://3fytn1wf2xio"
+run/main_scene="uid://d08jg36au575w"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

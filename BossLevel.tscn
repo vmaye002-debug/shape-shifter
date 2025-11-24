@@ -83,6 +83,7 @@ position = Vector2(369, 442)
 [node name="cant COUNT this boss" parent="." node_paths=PackedStringArray("triangle_area", "square_area") instance=ExtResource("4_7b2gy")]
 position = Vector2(837, 460)
 health = 4
+spawn_rate = 1.0
 warning_scene = ExtResource("6_prt80")
 triangle_area = NodePath("../Triangle")
 square_area = NodePath("../Square")
