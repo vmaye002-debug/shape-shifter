@@ -15,7 +15,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entere122d(body: Node2D) -> void:
+	print(body)
 	if body.state_now == "S":
 		queue_free()
 	else:
