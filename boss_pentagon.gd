@@ -1,12 +1,5 @@
-extends CharacterBody2D
+extends RigidBody2D
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	
-
-	move_and_slide()
+	pass
