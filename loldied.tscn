@@ -6,6 +6,11 @@ anchors_preset = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Restart"
+
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 offset_right = 1177.0
 offset_bottom = 687.0
