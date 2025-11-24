@@ -5,7 +5,7 @@
 [sub_resource type="QuadMesh" id="QuadMesh_hvvpq"]
 size = Vector2(30, 30)
 
-[node name="Node2D" type="CharacterBody2D"]
+[node name="Node2D" type="RigidBody2D"]
 script = ExtResource("1_gfht3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
