@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bjnkgr0oxholf" path="res://Flag 2.png" id="4_1ug64"]
 [ext_resource type="PackedScene" uid="uid://dsqqh8fvkltgb" path="res://Circle Enemy/Spawner.tscn" id="5_yg50l"]
 [ext_resource type="PackedScene" uid="uid://bth6weqqvlgei" path="res://finish_flag.tscn" id="6_cbmc8"]
-[ext_resource type="PackedScene" uid="uid://elxk53rop7f7" path="res://BossLevel.tscn" id="7_872hp"]
+[ext_resource type="PackedScene" uid="uid://crngtnpxtq2w2" path="res://BossLevel.tscn" id="7_872hp"]
 [ext_resource type="PackedScene" uid="uid://bs1m7tu6y31jk" path="res://enemy_square.tscn" id="8_apgry"]
 [ext_resource type="PackedScene" uid="uid://d3g3ui2j3sigp" path="res://Player.tscn" id="9_m0rsl"]
 
@@ -21,31 +21,31 @@ size = Vector2(91, 901)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Img1308" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-287, 476)
+position = Vector2(140, 462)
 texture = ExtResource("1_yqqjl")
 
 [node name="Img1309" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-285, 74)
+position = Vector2(142, 59)
 texture = ExtResource("2_gkwbp")
 
 [node name="Img1310" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-287, 304)
+position = Vector2(140, 289)
 texture = ExtResource("3_nj7ao")
 
 [node name="Img1305" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(728, 474)
+position = Vector2(1165, 462)
 texture = ExtResource("1_yqqjl")
 
 [node name="Img1306" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(730, 72)
+position = Vector2(1167, 59)
 texture = ExtResource("2_gkwbp")
 
 [node name="Img1307" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(728, 302)
+position = Vector2(1165, 289)
 texture = ExtResource("3_nj7ao")
 
 [node name="Img1304" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(1825, 477)
+position = Vector2(1825, 462)
 texture = ExtResource("1_yqqjl")
 
 [node name="Img1303" type="Sprite2D" parent="StaticBody2D"]
@@ -57,7 +57,7 @@ position = Vector2(1825, 305)
 texture = ExtResource("3_nj7ao")
 
 [node name="Img1311" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(3313, 477)
+position = Vector2(3313, 462)
 texture = ExtResource("1_yqqjl")
 
 [node name="Img1312" type="Sprite2D" parent="StaticBody2D"]
